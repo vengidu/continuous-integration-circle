@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
 
+
       - run:
           name: build dependencies
           command: bundle install
@@ -21,6 +22,7 @@ jobs:
           name: notify build is finished
           command: echo "The build is finished!"
           
+
   testlinks:
     executor: ci-executor
     steps:
@@ -55,3 +57,4 @@ workflows:
       - testlinks:
           requires:
             - build
+
